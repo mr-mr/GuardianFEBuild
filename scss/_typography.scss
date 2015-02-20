@@ -1,0 +1,102 @@
+// --------------------------------------------------------------------------------------------------------------------------------------------
+// Table of contents
+// --------------------------------------------------
+// 1.0 imports
+// 2.0 variables
+// 3.0 general
+// 4.0 type
+// 5.0 layout
+// 6.0 modules
+// --------------------------------------------------------------------------------------------------------------------------------------------
+
+// 1.0 imports
+// --------------------------------------------------------------------------------------------------------------------------------------------
+
+// 2.0 variables
+// --------------------------------------------------------------------------------------------------------------------------------------------
+
+@mixin font-size($sizeValue: 12 ){
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.125 * $sizeValue) + rem;
+}
+
+@mixin line-height($heightValue: 14 ){
+	line-height: $heightValue + px; //fallback for old browsers
+	line-height: (0.125 * $heightValue) + rem;
+}
+
+// 3.0 general
+// --------------------------------------------------------------------------------------------------------------------------------------------
+
+// 4.0 type
+// --------------------------------------------------------------------------------------------------------------------------------------------
+
+h1, h2, h3, h4, li {
+	font-weight:normal;
+}
+.global-logo{
+	font-family: $serif-title;
+	color:#fff;
+	font-weight:normal;
+	font-size:2.6em;
+	margin:-10px 0 10px 0;
+	@media (max-width:$small){
+		font-size:1.1em;
+	}
+}
+
+h1 {
+	@media (min-width:$small){
+		color: $copy; 
+		font-family: $serif; 
+		font-size:1.6em;
+		font-weight:bold;
+		line-height:1.1em;
+		line-height:30px;
+	}
+
+	@media (min-width:$medium) {
+		font-size:1.6em;
+	}
+
+	@media (min-width:$large) {
+		font-size:2em;
+		line-height:30px;
+	}
+}
+
+
+h2 {
+	color:$copy;
+	font-family: $serif; 
+	font-size: 1.5em;
+	@media (max-width:$small){
+		font-weight:light;
+	}
+}
+
+h3 {
+	@include clear-fix;
+	font-size:(16 / 14) * 1em;
+	font-family:$serif;
+	margin:0;
+	padding:0;
+	//float:left;
+
+}
+
+h4 {
+	//font-size:15;
+	font-family:$serif-bold;
+	margin:5,0,5,0;
+	//float:left;
+}
+
+h5 {
+	font-size:18;
+	color:$dark-grey;
+	font-family:$serif-bold;
+	margin:5px 0 20px 0;
+	//float:left;
+}
+
